@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{ED725CAF-6980-48BF-9CD7-2F86D888DDCD}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoodMaze</RootNamespace>
+    <AssemblyName>FoodMaze</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>FoodMaze_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Game\Core\IDrawable.cs" />
+    <Compile Include="Scripts\Game\Core\IDrawer.cs" />
+    <Compile Include="Scripts\Game\Core\IMazeGenerator.cs" />
+    <Compile Include="Scripts\Game\Core\Maze.cs" />
+    <Compile Include="Scripts\Game\Core\PathFinding\AStarFinder.cs" />
+    <Compile Include="Scripts\Game\Core\PathFinding\IFinder.cs" />
+    <Compile Include="Scripts\Game\Core\PathFinding\Path.cs" />
+    <Compile Include="Scripts\Game\Core\PathFinding\PFTile.cs" />
+    <Compile Include="Scripts\Game\Core\Point.cs" />
+    <Compile Include="Scripts\Game\Core\RecursiveGenerator.cs" />
+    <Compile Include="Scripts\Game\Core\Tile.cs" />
+    <Compile Include="Scripts\Game\Core\Wall.cs" />
+    <Compile Include="Scripts\Game\Objects\Characters\AIPlayer.cs" />
+    <Compile Include="Scripts\Game\Objects\Characters\Character.cs" />
+    <Compile Include="Scripts\Game\Objects\Characters\CharacterType.cs" />
+    <Compile Include="Scripts\Game\Objects\Touches\ITouchable.cs" />
+    <Compile Include="Scripts\Game\Objects\Touches\Touch.cs" />
+    <Compile Include="Scripts\Game\Objects\Touches\TouchManager.cs" />
+    <Compile Include="Scripts\Game\UI\UIButton.cs" />
+    <Compile Include="Scripts\Game\Objects\Drawer.cs" />
+    <Compile Include="Scripts\Game\Objects\Food.cs" />
+    <Compile Include="Scripts\Game\Objects\GamePlay.cs" />
+    <Compile Include="Scripts\Game\Objects\GameState.cs" />
+    <Compile Include="Scripts\Game\Objects\ImageManager.cs" />
+    <Compile Include="Scripts\Game\Objects\Coordinates\IWorld.cs" />
+    <Compile Include="Scripts\Game\Objects\Characters\MoveDirection.cs" />
+    <Compile Include="Scripts\Game\Objects\Characters\Player.cs" />
+    <Compile Include="Scripts\Game\Objects\Coordinates\Position.cs" />
+    <Compile Include="Scripts\Game\Objects\Context.cs" />
+    <Compile Include="Scripts\Game\Objects\Coordinates\TwoDimension.cs" />
+    <Compile Include="Scripts\Game\Objects\TileObject.cs" />
+    <Compile Include="Scripts\Game\UI\UIFood.cs" />
+    <Compile Include="Scripts\Game\UI\UIAIPlayer.cs" />
+    <Compile Include="Scripts\Game\UI\UIPlayer.cs" />
+    <Compile Include="Scripts\Game\UI\UIText.cs" />
+    <Compile Include="Scripts\Game\UI\UITileObject.cs" />
+    <Compile Include="Scripts\Game\UI\UIWall.cs" />
+    <Compile Include="Scripts\Game\UI\UIImagePool.cs" />
+    <Compile Include="Scripts\Game\UI\UIWallPool.cs" />
+    <Compile Include="Scripts\Game\Objects\Coordinates\World.cs" />
+    <Compile Include="Scripts\Screens\BaseScreen.cs" />
+    <Compile Include="Scripts\Screens\GameScreen.cs" />
+    <Compile Include="Scripts\Screens\ScreenId.cs" />
+    <Compile Include="Scripts\Screens\ScreenManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="FoodMaze_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\UI\btn_pause_normal.png" />
+    <Content Include="Assets\Images\UI\btn_playAgain_normal.png" />
+    <Content Include="Assets\Images\UI\btn_resume_normal.png" />
+    <Content Include="Assets\Images\UI\btn_single_normal.png" />
+    <Content Include="Assets\Images\GameScreen\bg_01.png" />
+    <Content Include="Assets\Images\GameScreen\bg_03.png" />
+    <Content Include="Assets\Images\GameScreen\btn_down_normal.png" />
+    <Content Include="Assets\Images\GameScreen\btn_down_pushed.png" />
+    <Content Include="Assets\Images\GameScreen\btn_left_normal.png" />
+    <Content Include="Assets\Images\GameScreen\btn_left_pushed.png" />
+    <Content Include="Assets\Images\GameScreen\btn_right_normal.png" />
+    <Content Include="Assets\Images\GameScreen\btn_right_pushed.png" />
+    <Content Include="Assets\Images\GameScreen\btn_up_normal.png" />
+    <Content Include="Assets\Images\GameScreen\btn_up_pushed.png" />
+    <Content Include="Assets\Images\GameScreen\char01_walk_01.png" />
+    <Content Include="Assets\Images\GameScreen\char01_walk_02.png" />
+    <Content Include="Assets\Images\GameScreen\char01_walk_03.png" />
+    <Content Include="Assets\Images\GameScreen\char01_win_01.png" />
+    <Content Include="Assets\Images\GameScreen\char01_win_02.png" />
+    <Content Include="Assets\Images\GameScreen\char02_walk_01.png" />
+    <Content Include="Assets\Images\GameScreen\char02_walk_02.png" />
+    <Content Include="Assets\Images\GameScreen\char02_walk_03.png" />
+    <Content Include="Assets\Images\GameScreen\char02_win_01.png" />
+    <Content Include="Assets\Images\GameScreen\char02_win_02.png" />
+    <Content Include="Assets\Images\GameScreen\char03_walk_01.png" />
+    <Content Include="Assets\Images\GameScreen\char03_walk_02.png" />
+    <Content Include="Assets\Images\GameScreen\char03_walk_03.png" />
+    <Content Include="Assets\Images\GameScreen\char03_win_01.png" />
+    <Content Include="Assets\Images\GameScreen\char03_win_02.png" />
+    <Content Include="Assets\Images\GameScreen\char04_walk_01.png" />
+    <Content Include="Assets\Images\GameScreen\char04_walk_02.png" />
+    <Content Include="Assets\Images\GameScreen\char04_walk_03.png" />
+    <Content Include="Assets\Images\GameScreen\char04_win_01.png" />
+    <Content Include="Assets\Images\GameScreen\char04_win_02.png" />
+    <Content Include="Assets\Images\GameScreen\targetObject_01.png" />
+    <Content Include="Assets\Images\GameScreen\targetObject_02.png" />
+    <Content Include="Assets\Images\GameScreen\targetObject_03.png" />
+    <Content Include="Assets\Images\GameScreen\targetObject_04.png" />
+    <Content Include="Assets\Images\GameScreen\wall.jpg" />
+    <Content Include="Assets\Images\GameScreen\wall_bg01.png" />
+    <Content Include="Assets\Images\GameScreen\wall_bg02.png" />
+    <Content Include="Assets\test.jpg" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Images\MenuScreen\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
